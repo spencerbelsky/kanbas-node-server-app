@@ -4,6 +4,7 @@ export default function UserRoutes(app) {
   const createUser = async (req, res) => {
     const user = await dao.createUser(req.body);
     res.json(user);
+    console.log("user created")
   };
 
   const deleteUser = async (req, res) => {
@@ -67,8 +68,6 @@ export default function UserRoutes(app) {
       res.status(401).json({ message: "Unable to login. Try again later." });
     }
   };
-
-
 
   const signout = (req, res) => {
     req.session.destroy();
