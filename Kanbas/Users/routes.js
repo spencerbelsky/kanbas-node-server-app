@@ -61,6 +61,7 @@ export default function UserRoutes(app) {
       req.session["currentUser"] = currentUser;
       console.log(currentUser, "logged in")
       res.json(currentUser);
+      console.log("trying to log in")
     } else {
       console.log("can't log in")
       res.status(401).json({ message: "Unable to login. Try again later." });
