@@ -73,7 +73,7 @@ export default function UserRoutes(app) {
   const signout = (req, res) => {
     req.session.destroy();
     res.sendStatus(200);
-
+    console.log('sign out successful')
   };
   const profile = async (req, res) => {
     const currentUser = req.session["currentUser"];
